@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="icon" href="assets/smalllogo.png">
+    <title>Art of Assassination</title>
+  </head>
+
+  <body style="background-color: #f7f7f7">
+    <div
+      class="d-flex flex-column min-vh-100 justify-content-center align-items-center"
+    >
+      <div class="container" style="text-align: center">
+        <div class="row">
+          <h1>Browse</h1>
+          <h1 class="mb-5">Assassination Tools</h1>
+
+          <form id="toolsForm">
+            <button type="submit" id="nextTool" class="btn text-white bg-dark">
+              Get Next Tool
+            </button>
+          </form>
+        </div>
+        <br /><br />
+        <div class="card">
+          <div id="content" class="card-body">Click the button!</div>
+
+          <!-- <div id="created_at" class="card-body">Click the button!</div> -->
+          <!-- <div id="content2" class="card-body">Click the button!</div> -->
+        </div>
+        <br /><br />
+        <a style="font-size: 12px; color: black;" href="https://rest-api-assignment.herokuapp.com/api/docs">
+          <p>
+            Click Here for Swagger Documentation
+          </p>
+        </a>
+        <br />
+        <img height="200px" src="assets/logo.png" title="Logo" />
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

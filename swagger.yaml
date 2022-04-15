@@ -1,0 +1,236 @@
+openapi: 3.0.0
+info:
+  title: Art Of Assassination
+  description: MongoDB ExpressJS NodeJS REST API
+  version: 1.0.0
+servers:
+  - url: https://rest-api-assignment.herokuapp.com/api/
+    description: Heroku remote server
+  - url: http://localhost:4000/api/
+    description: Localhost development server
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: auth-token
+
+  schemas:
+    Tool:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        img:
+          type: string
+        type:
+          type: string
+        price:
+          type: number
+        inStock:
+          type: boolean
+
+    Contractor:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        pass:
+          type: string
+        date:
+          type: string
+
+paths:
+  /contractors/register:
+    post:
+      tags:
+        - Contractor
+      summary: Register Contractor
+      description: Register a new Contractor in the database
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Contractor"
+
+      responses:
+        201:
+          description: Contractor created succesfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  _id:
+                    type: string
+
+  /contractors/login:
+    post:
+      tags:
+        - Contractor
+      summary: Login Contractor
+      description: Login a Contractor in order to get JWT token (auth-token)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                pass:
+                  type: string
+
+      responses:
+        200:
+          description: Contractor logged in succesfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  data:
+                    type: string
+
+  /contractors:
+    get:
+      tags:
+        - Contractor
+      summary: View All Contractors
+      description: Retrieves a list of Contractors as hitmen.
+      security:
+        - ApiKeyAuth: []
+      responses:
+        200:
+          description: A list of Contractor hitmen in an array.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Contractor"
+
+  /tools:
+    post:
+      tags:
+        - Tools
+      summary: Add New Tool
+      description: Add a new Tool
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Tool"
+
+      responses:
+        201:
+          description: Tool added succesfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tool"
+    
+    get:
+      tags:
+        - Tools
+      summary: View All Tools
+      description: Retrieves a list of Tools as murder objects.
+      responses:
+        200:
+          description: A list of Tool murder objects in an array.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Tool"
+
+  /tools/{id}:
+    get:
+      tags:
+        - Tools
+      summary: View Specific Tool
+      description: Retrieves a specific Tool based on its id.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: MongoDB id
+          schema:
+            type: string
+      responses:
+        200:
+          description: A Tool in the format of a murder object.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Tool"
+
+    put:
+      tags:
+        - Tools
+      summary: Edit Tool Information
+      description: Updates a specific Tool based on its id
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: MongoDB id
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Tool"
+
+      responses:
+        201:
+          description: Tool updated succesfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tool"
+
+    delete:
+      tags:
+        - Tools
+      summary: Delete Tool
+      description: Deletes a specific Tool based on it id
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: MongoDB id
+          schema:
+            type: string
+
+      responses:
+        201:
+          description: Tool deleted succesfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tool"
