@@ -17,6 +17,7 @@ const authRoutes = require("./routes/auth");
 require("dotenv-flow").config();
 app.use(express.json());
 
+
 // Handle CORS
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
