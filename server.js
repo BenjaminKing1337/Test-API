@@ -13,6 +13,8 @@ app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
 const toolRoutes = require("./routes/tools");
 //import user routes
 const authRoutes = require("./routes/auth");
+//import frontend
+const Frontend = require("./Frontend/index");
 // ---
 require("dotenv-flow").config();
 app.use(express.json());
@@ -43,6 +45,8 @@ app.get("/api/welcome", (req, res) => {
 app.use("/api/tools", toolRoutes);
 // user, register and login
 app.use("/api/contractors", authRoutes);
+// frontend
+app.use("/", Frontend);
 // port
 const PORT = process.env.PORT || 4000;
 // start up server
