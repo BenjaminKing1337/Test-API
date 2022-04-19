@@ -4,8 +4,8 @@ const tool = require("../models/tools");
 const { verifyToken } = require("../validation");
 // CRUD operations - /api/tools/
 // Create tool - POST with validation
-// router.post("/", verifyToken, (req, res) => {
-router.post("/", (req, res) => {
+router.post("/", verifyToken, (req, res) => {
+// router.post("/", (req, res) => {
   data = req.body;
   tool
     .insertMany(data)
@@ -71,8 +71,8 @@ router.get("/:id", (req, res) => {
     });
 });
 // Update speciic tool - PUT
-// router.put("/:id", verifyToken, (req, res) => {
-router.put("/:id", (req, res) => {
+router.put("/:id", verifyToken, (req, res) => {
+// router.put("/:id", (req, res) => {
   const id = req.params.id;
   tool
     .findByIdAndUpdate(id, req.body)
@@ -91,8 +91,8 @@ router.put("/:id", (req, res) => {
     });
 });
 // Delete specific tool - DELETE
-// router.delete("/:id", verifyToken, (req, res) => {
-router.delete("/:id", (req, res) => {
+router.delete("/:id", verifyToken, (req, res) => {
+// router.delete("/:id", (req, res) => {
   const id = req.params.id;
   tool
     .findByIdAndDelete(id)
