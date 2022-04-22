@@ -1,5 +1,7 @@
 # Art of Assassination
 
+A satirical website for contractors to buy assassination tools.
+
 Rest api made with express, mongoose and node.js with frontend
 Using MongoDB for backend.
 Testing using mocha and chai
