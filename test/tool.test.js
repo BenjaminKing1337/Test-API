@@ -158,6 +158,7 @@ describe("/First Test Collection", () => {
       });
   });
 
+
   // Valid input test (register, login, )
   it("should register + login a contractor, create tool and delete it from DB", (done) => {
     // 1) Register new contractor
