@@ -1,0 +1,34 @@
+body {
+  background: linear-gradient(black, black, red);
+  .header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5%;
+    padding: 1%;
+    height: 5%;
+    width: 100%;
+    background-color: red;
+    h1 {
+      margin: 0;
+      color: white;
+    }
+  }
+  div.row {
+    color: #d9c7c5;
+  }
+  #nextTool {
+    background-color: #d9c7c5;
+  }
+  .card {
+    background-color: #d9c7c5;
+    #tool {
+        display: flex;
+        justify-content: space-between;
+        #tool {
+            display: flex;
+        }
+    }
+    
+  }
+}

@@ -1,0 +1,53 @@
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(black), to(red));
+  background: linear-gradient(black, black, red);
+}
+
+body .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5%;
+  padding: 1%;
+  height: 5%;
+  width: 100%;
+  background-color: red;
+}
+
+body .header h1 {
+  margin: 0;
+  color: white;
+}
+
+body div.row {
+  color: #d9c7c5;
+}
+
+body #nextTool {
+  background-color: #d9c7c5;
+}
+
+body .card {
+  background-color: #d9c7c5;
+}
+
+body .card #tool {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .card #tool #tool {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,4 @@
-const apiURL = "https://rest-api-assignment.herokuapp.com";
+const apiURL = "https://artofassassination.herokuapp.com";
 
 
 function getRandomArbitrary(min, max) {
@@ -16,7 +16,20 @@ const getTools = async () => {
   let toolNo = getRandomArbitrary(0,noOfTools);
   // let toolNo = getRandomArbitrary(0,noOfTools-1); // when not using the random function
   
-  content.innerHTML="<img style='border: 1px solid black' height='100' src='"+tools[toolNo].img + "'><br><a style='font-size: 20px; color: black;' href='"+ apiURL + tools[toolNo].uri + "' target='_blank'>" + tools[toolNo].name + "</a><br>" + tools[toolNo].description+ "<br>" +tools[toolNo].type+ "<br> $ " +tools[toolNo].price;
+  content.innerHTML=
+  "<div id='tool'> <img style='border: 1px solid black' height='200' src='"
+  + tools[toolNo].img 
+  + "'><br><div id='text'><a style='font-size: 20px; color: black;' href='"
+  + apiURL + tools[toolNo].uri 
+  + "' target='_blank'>" 
+  + tools[toolNo].name 
+  + "</a><br>" 
+  + tools[toolNo].description 
+  + "<br><br>" 
+  +tools[toolNo].type
+  + "<br><br> <b>$ " 
+  +tools[toolNo].price
+  + "</b></div></div>";
 
 
 
