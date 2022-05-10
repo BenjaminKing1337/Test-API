@@ -1,3 +1,5 @@
+[![Node.JS CI/CD](https://github.com/BenjaminKing1337/fullstack_project-ArtOfAssassination/actions/workflows/main.yml/badge.svg)](https://github.com/BenjaminKing1337/fullstack_project-ArtOfAssassination/actions/workflows/main.yml)
+
 # Art of Assassination
 
 A satirical website for contractors to buy assassination tools.
