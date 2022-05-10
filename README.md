@@ -20,7 +20,9 @@ Both deployed through pipeline with github actions.
 
 
 -- Setup --
-
 npm install
-
 npm test
+
+-- backend mongo --
+cd backend
+npm run start dev
