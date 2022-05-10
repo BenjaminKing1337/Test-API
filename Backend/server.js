@@ -10,9 +10,9 @@ const yaml = require('yamljs');
 const swaggerDefinition = yaml.load('./swagger.yaml');
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
 //import tool routes
-const toolRoutes = require("../routes/tools");
+const toolRoutes = require("./routes/tools");
 //import user routes
-const authRoutes = require("../routes/auth");
+const authRoutes = require("./routes/auth");
 
 // ---
 require("dotenv-flow").config();
