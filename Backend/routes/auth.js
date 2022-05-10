@@ -4,7 +4,7 @@ const Contractor = require('../models/contractor');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 //importing validations
-const { registerValidation, loginValidation } = require('../Backend/validation');
+const { registerValidation, loginValidation } = require('../validation');
 const { application } = require('express');
 // ROUTE - /registration
 router.post("/register", async (req, res) => {
