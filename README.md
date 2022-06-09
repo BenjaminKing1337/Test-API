@@ -23,6 +23,6 @@ Both deployed through pipeline with github actions.
 npm install
 npm test
 
--- backend mongo --
+-- backend local mongo --
 cd backend
 npm run start dev

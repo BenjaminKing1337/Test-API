@@ -105,7 +105,7 @@ router.post("/login", async (req, res) => {
 // }
 // );
 
-// Read all products - GET
+// Read all contractors - GET
 router.get("/", (req, res) => {
     Contractor.find()
         .then(data => { res.send(data); })
